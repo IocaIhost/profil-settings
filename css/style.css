@@ -1,9 +1,9 @@
 :root{
-    --text-color: '';
-    --bg-color: '';
+    --text-color: #a6a5a5;
+    --bg-color: #fdec50;
+    --body-bg: #2f2f2f;
     --body-font-family: "Arial", sans-serif;
-    --primary-color: '';
-    --primary-heading: '';
+    --primary-heading: black;
 }
 
 html{
@@ -21,7 +21,7 @@ html{
 
 
 *:focus{
-    outline: '';
+    outline: 0;
     outline-offset: 2px;
 }
 
@@ -34,7 +34,7 @@ body{
     font-size: 16px;
     line-height: 1.5;
     font-family: var(--body-font-family);
-    background-color: var(--bg-color);
+    background-color: var(--body-bg);
     color: var(--text-color);
 }
 
@@ -55,24 +55,115 @@ img{
 
 .main-content{
     flex-grow: 1;
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
 
-.visually-hidden{
+.profile-settings {
+    max-width: 500px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: var(--bg-color);
+    box-shadow: 0 10px 10px -3px rgba(0, 0, 0, 0.2);
+}
+
+.profile-settings-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    color: var(--primary-heading);
+}
+
+.profile-settings-title {
+    margin: 0;
+    font-size: 20px;
+
+}
+
+.profile-settings-close-link {
+    display: flex;
+}
+
+.profile-setting-form-body {
+    position: relative;
+    left: 40px;
+    padding: 60px 25px 40px;
+    background-color: #fff;
+    box-shadow: 0 10px 10px -3px rgba(0, 0, 0, 0.2);
+}
+
+.profile-settings-avatar {
     position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+    left: 25px;
+    top: 0;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    transform: translateY(-50%);
 }
 
-@media
-only screen and (-webkit-min-device-pixel-ratio: 2),
-only screen and (   min--moz-device-pixel-ratio: 2),
-only screen and (     -o-min-device-pixel-ratio: 2/1),
-only screen and (        min-device-pixel-ratio: 2),
-only screen and (                min-resolution: 192dpi),
-only screen and (                min-resolution: 2dppx) {
+
+.profile-settings-form-fullname-group{
+    display: flex;
+}
+
+.profile-settings-form-fullname-group:not(:last-child){
+    margin-bottom: 24px;
+}
+
+.profile-settings-form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-settings-form-group:not(:last-child) {
+    margin-bottom: 24px;
+}
+
+.profile-settings-form-fullname-group .profile-settings-form-group{
+    width: 50%;
+    margin-bottom: 0;
+}
+
+
+.profile-setting-form-label {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.profile-settings-form-field {
+    display: block;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    border: 0;
+    border-bottom: 1px solid var(--text-color);
+}
+
+
+.profile-settings-form-textarea {
+    width: 100px;
+    resize: vertical;
+}
+
+.profile-settings-form-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 40px;
+}
+
+.profile-setting-form-action {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.profile-setting-form-action:not(:last-child) {
+    margin-right: 40px;
 }
